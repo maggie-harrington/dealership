@@ -70,9 +70,9 @@ class Car
         return $this->image_path;
     }
 
-    function worthBuying ($max_price)
+    function worthBuying ($max_price, $max_mileage)
     {
-        return $this->price < $max_price;
+        return ($this->price < $max_price) && ($this->miles < $max_mileage);
     }
 }
 
@@ -86,7 +86,7 @@ $cars = array($car1, $car2, $car3, $car4);
 $cars_matching_search = array();
 
 foreach ($cars as $car) {
-    if ($car->worthBuying($_GET['price'])) {
+    if ($car->worthBuying($_GET['price'], $_GET['mileage'])) {
         array_push($cars_matching_search, $car);
     }
 }
