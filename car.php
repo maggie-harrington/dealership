@@ -2,11 +2,11 @@
 class Car
 {
     private $make_model;
-    public $price;
-    public $miles;
-    public $doors;
+    private $price;
+    private $miles;
+    private $doors;
 
-    function __construct($car_make_model, $car_price, $car_miles, $car_doors)
+    function __construct($car_make_model, $car_price, $car_miles, $car_doors = 4)
     {
         $this->make_model = $car_make_model;
         $this->price = $car_price;
@@ -58,11 +58,15 @@ class Car
         return $this->doors;
     }
 
+    function worthBuying ($max_price)
+    {
+        return $this->price < $max_price;
+    }
 }
 
-$car1 = new Car("2014 Porsche 911", 114991, 7864, 4);
-$car2 = new Car("2011 Ford F450", 55995, 14241, 4);
-$car3 = new Car("2013 Lexus RX 350", 44700, 20000, 4);
+$car1 = new Car("2014 Porsche 911", 114991, 7864);
+$car2 = new Car("2011 Ford F450", 55995, 14241);
+$car3 = new Car("2013 Lexus RX 350", 44700, 20000);
 $car4 = new Car("Mercedes Benz CLS550", 39900, 37979, 2);
 
 $cars = array($car1, $car2, $car3, $car4);
@@ -70,8 +74,7 @@ $cars = array($car1, $car2, $car3, $car4);
 $cars_matching_search = array();
 
 foreach ($cars as $car) {
-    $car_price = $car->getPrice();
-    if ($car->price < $_GET["price"]) {
+    if ($car->worthBuying($_GET['price'])) {
         array_push($cars_matching_search, $car);
     }
 }
