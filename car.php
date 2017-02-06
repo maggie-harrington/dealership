@@ -102,12 +102,16 @@ foreach ($cars as $car) {
         <h1>Your Car Dealership</h1>
         <ul>
             <?php
+            if (empty($cars_matching_search)) {
+                echo "No cars match your search!";
+            } else {
                 foreach ($cars_matching_search as $car) {
                     $current_make_model = $car->getMakeModel();
                     $current_price = $car->getPrice();
                     $current_miles = $car->getMiles();
                     $current_doors = $car->getDoors();
                     $current_image = $car->getImage();
+
                     echo "<li> $current_make_model </li>";
                     echo "<ul>";
                         echo "<li> $$current_price </li>";
@@ -115,6 +119,7 @@ foreach ($cars as $car) {
                         echo "<li> Doors: $current_doors </li>";
                         echo "<li><img src='$current_image'></li>";
                     echo "</ul>";
+                    }   
                 }
             ?>
         </ul>
