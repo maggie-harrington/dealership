@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+        <title>Your Car Dealership\'s Homepage</title>
+    </head>
+    <body>
+        <h1>Your Car Dealership</h1>
+
+        {% if search_result is not empty %}
+            <p>Here are the cars matching your search:</p>
+            <ul>
+                {% for car in search_result %}
+                    <li>{{ car.getMakeModel }}</li>
+                    <li>{{ car.getPrice}}</li>
+                    <li>{{ car.getMiles }}</li>
+                    <li>{{ car.getDoors }}</li>
+                    <br>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No cars match your search!</p>
+        {% endif %}
+        <p><a href='/'>Return Home</a></p>
+
+    </body>
+</html>

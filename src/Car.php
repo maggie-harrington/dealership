@@ -70,9 +70,19 @@
             return $this->doors;
         }
 
-        function worthBuying ($max_price, $max_mileage)
+        function worthBuying($max_price, $max_mileage)
         {
             return ($this->price < $max_price) && ($this->miles < $max_mileage);
+        }
+
+        function save()
+        {
+            array_push($_SESSION['cars'], $this);
+        }
+
+        static function getAll()
+        {
+            return $_SESSION['cars'];
         }
     }
 ?>

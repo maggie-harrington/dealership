@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>List of All Cars</title>
+    </head>
+    <body>
+        <h1>List of All Cars</h1>
+
+
+            <p>Entire Inventory:</p>
+            <ul>
+                {% for car in cars %}
+                    <li>{{ car.getMakeModel }}</li>
+                    <li>{{ car.getPrice}}</li>
+                    <li>{{ car.getMiles }}</li>
+                    <li>{{ car.getDoors }}</li>
+                    <br>
+                {% endfor %}
+            </ul>
+
+        <p><a href='/'>Return Home</a></p>
+
+    </body>
+</html>

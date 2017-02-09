@@ -1,0 +1,47 @@
+<html>
+  <head>
+
+    <title>Find a Car</title>
+  </head>
+  <body>
+    <div class='container'>
+      <h1>Find a Car</h1>
+      <form action='/search_results'>
+        <div>
+          <label for='price'>Enter Maximum Price:</label>
+          <input id='price' name='price' class='form-control' type='number'>
+        </div>
+        <div>
+          <label for='mileage'>Enter Maximum Mileage:</label>
+          <input id='mileage' name='mileage' class='form-control' type='number'>
+        </div>
+        <button type='submit' class='btn-success'>Submit</button>
+      </form>
+      </div>
+
+     <div class='container'>
+     <h1>Post a Car</h1>
+      <form action='/confirmation'>
+        <div>
+          <label for='make_model'>Make and Model</label>
+          <input id='make_model' name='make_model' class='form-control' type='text'>
+        </div>
+        <div>
+          <label for='price'>Price</label>
+          <input id='price' name='price' class='form-control' type='number'>
+        </div>
+        <div>
+          <label for='mileage'>Mileage</label>
+          <input id='mileage' name='mileage' class='form-control' type='number'>
+        </div>
+        <div>
+          <label for='doors'>Doors</label>
+          <input id='doors' name='doors' class='form-control' type='number'>
+        </div>
+        <button type='submit' class='btn-success'>Submit</button>
+      </form>
+      </div>
+
+      <p><a href='/view_all_cars'>View list of cars.</a></p>
+  </body>
+</html>
