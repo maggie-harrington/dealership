@@ -84,5 +84,10 @@
         {
             return $_SESSION['cars'];
         }
+
+        static function deleteAll()
+        {
+            $_SESSION['cars'] = array();
+        }
     }
 ?>
