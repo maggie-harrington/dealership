@@ -4,15 +4,15 @@
         private $make_model;
         private $price;
         private $miles;
-        private $image_path;
+        // private $image_path;
         private $doors;
 
-        function __construct($car_make_model, $car_price, $car_miles, $car_image, $car_doors = 4)
+        function __construct($car_make_model, $car_price, $car_miles, $car_doors)
         {
             $this->make_model = $car_make_model;
             $this->price = $car_price;
             $this->miles = $car_miles;
-            $this->image_path = $car_image;
+            // $this->image_path = $car_image;
             $this->doors = $car_doors;
         }
 
